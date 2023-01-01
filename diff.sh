@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_PATH=$HOME/comprov
+BASE_PATH=$HOME/ComProv
 PATH_A=$BASE_PATH/$1
 PATH_B=$BASE_PATH/$2
 

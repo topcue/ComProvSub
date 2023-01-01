@@ -1,14 +1,14 @@
 #!/bin/bash
 
-BASE_PATH="$HOME/comprov/binutils"
-TMP_PATH="$HOME/comprov/tmp"
+BASE_PATH="$HOME/ComProv/binutils"
+TMP_PATH="$HOME/ComProv/tmp"
 CONFIG_OPT_DEFAULT="--prefix=$BASE_PATH/install --disable-gdb --disable-gdbserver --disable-sim"
 
 if [ $# -eq 0 ]; then TARGET="x64"; else TARGET=$1; fi
 
 if [ $TARGET = "x64" ]; then
-  export CC="/home/topcue/dep/gcc/install/bin/gcc";
-  export CXX="/home/topcue/dep/gcc/install/bin/g++";
+  export CC="/home/topcue/tools/x86_64-ubuntu-linux-gnu-8.2.0/bin/x86_64-ubuntu-linux-gnu-gcc";
+  export CXX="/home/topcue/tools/x86_64-ubuntu-linux-gnu-8.2.0/bin/x86_64-ubuntu-linux-gnu-g++";
   CONFIG_OPT=$CONFIG_OPT_DEFAULT""
 # elif [ $TARGET = "x86" ]; then
 #   export CC="gcc -m32"; export CXX="g++ -m32";
@@ -25,18 +25,18 @@ else
 fi
 
 COMPILER_OPT=""
-COMPILER_OPT+=" -O0"
+COMPILER_OPT+=" -O1"
 
 ##! o1
-COMPILER_OPT+=" -fcombine-stack-adjustments" ##
-COMPILER_OPT+=" -fcompare-elim" ##
-COMPILER_OPT+=" -fdefer-pop" ##
-COMPILER_OPT+=" -fipa-pure-const" ##
-COMPILER_OPT+=" -fomit-frame-pointer" ##
-COMPILER_OPT+=" -fshrink-wrap" ##
-COMPILER_OPT+=" -fsplit-wide-types" ##
-COMPILER_OPT+=" -ftree-coalesce-vars" ##
-COMPILER_OPT+=" -ftree-ter" ##
+# COMPILER_OPT+=" -fcombine-stack-adjustments" ##
+# COMPILER_OPT+=" -fcompare-elim" ##
+# COMPILER_OPT+=" -fdefer-pop" ##
+# COMPILER_OPT+=" -fipa-pure-const" ##
+# COMPILER_OPT+=" -fomit-frame-pointer" ##
+# COMPILER_OPT+=" -fshrink-wrap" ##
+# COMPILER_OPT+=" -fsplit-wide-types" ##
+# COMPILER_OPT+=" -ftree-coalesce-vars" ##
+# COMPILER_OPT+=" -ftree-ter" ##
 
 # COMPILER_OPT+=" -falign-functions"
 # COMPILER_OPT+=" -falign-jumps"
